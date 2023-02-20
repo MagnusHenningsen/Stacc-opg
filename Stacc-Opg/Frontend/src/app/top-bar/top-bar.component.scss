@@ -1,0 +1,45 @@
+nav {
+    background: #505f90;
+
+    border-style: none;
+    border-right: groove;
+    border-bottom: groove;
+    border-color: #333333;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+
+            a {
+                color: white;
+                padding: 20px;
+                display: block;
+                .topbarBtn {
+                    padding: 3px;
+                    background-color: #7a86ad;
+                    border-color: #7a86ad;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    border-style:double;
+                    border-radius: 1em;
+                    transition: 0.3s;
+                }
+                .topbarBtn:active {
+                    background-color: darken(#7a86ad, 10%);
+                    border-color: darken(#7a86ad, 10%);;
+                    border-style: inset;
+                }
+                
+            }
+
+        }
+    }
+    
+}
+
