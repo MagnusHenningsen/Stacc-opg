@@ -1,7 +1,8 @@
 const express = require("express");
 const fs = require("fs");
-
+const cors = require("cors");
 const app = express();
+app.use(cors());
 
 app.get("/consumption", (req, res) => {
     fs.readFile("consumption.json", (err, data) => {

@@ -5,7 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { HomeComponent } from './home/home.component';
-
+import { HttpClientModule} from '@angular/common/http';
+import { NgChartsModule } from 'ng2-charts';
+import { GraphComponent } from './graph/graph.component';
 
 
 @NgModule({
@@ -13,11 +15,13 @@ import { HomeComponent } from './home/home.component';
     AppComponent,
     TopBarComponent,
     HomeComponent,
-
+    GraphComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

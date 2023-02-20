@@ -1,10 +1,9 @@
 nav {
-    background: #505f90;
+    background: #161B22;
 
-    border-style: none;
-    border-right: groove;
-    border-bottom: groove;
-    border-color: #333333;
+    border-style: solid;
+
+    border-color: lighten(#30363D, 10%);
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -21,8 +20,8 @@ nav {
                 display: block;
                 .topbarBtn {
                     padding: 3px;
-                    background-color: #7a86ad;
-                    border-color: #7a86ad;
+                    background-color: #0D1117;
+                    border-color: lighten(#0D1117,10%);
                     width: 100%;
                     display: flex;
                     justify-content: center;
@@ -31,8 +30,8 @@ nav {
                     transition: 0.3s;
                 }
                 .topbarBtn:active {
-                    background-color: darken(#7a86ad, 10%);
-                    border-color: darken(#7a86ad, 10%);;
+                    background-color: darken(#3975B8, 10%);
+                    border-color: darken(#3975B8, 10%);;
                     border-style: inset;
                 }
                 

@@ -1,14 +1,20 @@
 <div class="buttons">
-    <div class="contentBtn" id="div1" (click)="onButtonClick($event)">
-        <p>Your consumption</p>
-      </div>
-      <div class="contentBtn" id="div2" (click)="onButtonClick($event)">
-        <p>Providers</p>
-      </div>
-      <div class="contentBtn" id="div3" (click)="onButtonClick($event)">
-        <p>Hei</p>
-      </div>
+    <button class="contentBtn" id="btn1" (click)="onButtonClick($event)">
+        Your Consumption
+      </button>
+      <button class="contentBtn" id="btn2" (click)="onButtonClick($event)">
+        Providers
+      </button>
+      <button class="contentBtn" id="btn3" (click)="onButtonClick($event)">
+        Best Options
+      </button>
 </div>
 <div class="content">
-    
+    <div class="tab" *ngIf="activeBtn == null" id="tab1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum </div>
+    <div class="tab" *ngIf="activeBtn == null" id="tab2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum </div>
+    <div class="tab" *ngIf="activeBtn == null" id="tab3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum </div>
+    <div *ngIf="activeBtn != null && !loading" id="contentDiv">
+        <app-graph></app-graph>
+    </div>
+
 </div>

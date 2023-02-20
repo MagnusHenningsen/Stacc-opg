@@ -1,49 +1,86 @@
 .buttons {
-    background-color: #7a86ad;
-    width: min(100% - 30px);
-    margin-inline: auto;
-    margin-top: 5px;
+  background-color: #0d1117;
+  width: min(90%);
+  margin-inline: auto;
+  margin-top: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 1em;
+  min-height: 80px;
+
+  .contentBtn {
+    color: white;
+    font-size: large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: darken(#161b22, 10%);
+    border-color: lighten(#30363d, 10%);
+    width: 20%;
     display: flex;
-    flex-wrap: wrap;
-    border-radius: 1em;
-    min-height: 80px;
-  
-    .contentBtn {
-      padding: 3px;
-      background-color: #7a86ad;
-      border-color: #7a86ad;
-      width: 20%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-style: double;
-      border-radius: 0;
-      transition: 0.3s;
-      flex: 1;
-  
-      &:first-child {
-        border-top-left-radius: 1em;
-      }
-  
-      &:last-child {
-        border-top-right-radius: 1em;
-      }
-  
-      &.active {
-        flex: 2;
-        background-color: darken(#7a86ad, 10%);
-        border-color: darken(#7a86ad, 10%);
-        border-style: inset;
-      }
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    border-bottom-color: #30363d;
+    border-radius: 0;
+    transition: 0.3s;
+    flex: 1;
+    &:first-child {
+      border-top-left-radius: 1em;
+      border-right: none;
+    }
+
+    &:last-child {
+      border-left: none;
+      border-top-right-radius: 1em;
+    }
+
+    &.active {
+      flex: 2;
+      background-color: #161b22;
+      border-color: lighten(#30363d, 10%);
+
+      border-bottom: none;
+      
+      text-decoration: underline;
     }
   }
+}
 .content {
-    background-color: darken(#7a86ad, 10%);
-    width: min(100% - 30px);
-    min-height: 400px;
-    margin-inline: auto;
+  color: white;
+  background-color: #161b22;
+  width: min(90% - 6px);
+  min-height: 400px;
+  margin-inline: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  border-style: solid;
+  border-color: lighten(#30363d, 10%);
+  border-top: none;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+
+  .tab {
+    font-size: large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 5px;
     display: flex;
-    flex-wrap: wrap;
-    border-bottom-right-radius: 1em;
+    flex: 1 0 250px;
+    height: 400px;
+    text-align: center;
+    text-justify: center;
+    border-style: solid;
+    border-color: lighten(#30363d, 10%);
+    border-radius: 1em;
+  }
+  #contentDiv {
+    display: flex;
     border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+
+    min-height: 400px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+  }
 }
