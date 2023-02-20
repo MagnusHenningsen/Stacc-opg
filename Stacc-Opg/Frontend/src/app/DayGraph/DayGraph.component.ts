@@ -5,11 +5,11 @@ import { Consumption } from '../Consumption';
 import { ChartConfiguration, ChartOptions, ChartType } from 'chart.js';
 
 @Component({
-  selector: 'app-graph',
-  templateUrl: './graph.component.html',
-  styleUrls: ['./graph.component.scss'],
+  selector: 'app-DayGraph',
+  templateUrl: './DayGraph.component.html',
+  styleUrls: ['./DayGraph.component.scss'],
 })
-export class GraphComponent {
+export class DayGraphComponent {
   title = 'Consumption chart';
 
   public lineChartData: ChartConfiguration<'line'>['data'] = {
@@ -21,7 +21,7 @@ export class GraphComponent {
         fill: true,
         tension: 0.5,
         borderColor: 'green',
-        backgroundColor: 'rgba(255,0,0,0.3)',
+        backgroundColor: 'rgba(50,200,50,0.3)',
       },
     ],
   };
@@ -32,7 +32,7 @@ export class GraphComponent {
 
   public consumptions: Consumption[] = [];
   line: any;
- 
+
   constructor(private consumptionService: ConsumptionService) {}
 
   ngOnInit() {
@@ -48,15 +48,19 @@ export class GraphComponent {
           )
       );
       this.ConvertToDays();
-      console.log(this.toDays);
-      this.lineChartData.labels = this.toDays.map(
-        (day) => day[0].from.toLocaleDateString()
+      this.lineChartData.labels = this.toDays.map((day) =>
+        day[0].from.toLocaleDateString()
       );
-      this.lineChartData.datasets[0].data = this.toDays.map((day) =>
-        day.reduce((sum, consumption) => sum + consumption.consumption, 0) / day.length
+      this.lineChartData.datasets[0].data = this.toDays.map(
+        (day) =>
+          day.reduce((sum, consumption) => sum + consumption.consumption, 0) /
+          day.length
       );
     });
   }
+  /**
+   * Convert initial input to be the consumption of a day
+   */
   toDays: Consumption[][] = [];
   ConvertToDays() {
     let date: number | null = null;
@@ -66,20 +70,27 @@ export class GraphComponent {
         date = x.from.getDate();
       }
       if (x.from.getDate() != date) {
-        const avgConsumption =
-          day.reduce((sum, consumption) => sum + consumption.consumption, 0) /
-          day.length;
         this.toDays.push(day);
         day = [];
-        console.log("New day " + x.from.getDate() + " - " + date);
         date = x.from.getDate();
       }
       day.push(x);
     });
-    // Calculate the average consumption for the last day
-    const avgConsumption =
-      day.reduce((sum, consumption) => sum + consumption.consumption, 0) /
-      day.length;
     this.toDays.push(day);
+  }
+  /**
+   * Sort the hours, will be used for the average consumption throughout the day
+   */
+  toHours: Consumption[][] = [];
+  ConvertToHours() {
+    this.toHours = [];
+    for (let i = 0; i < 24; i++) {
+      this.toHours[i] = [];
+    }
+    this.consumptions.forEach((x) => {
+      let h = x.from.getHours();
+      this.toHours[h].push(x);
+    });
+    console.log(this.toHours);
   }
 }
