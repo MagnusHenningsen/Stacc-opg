@@ -16,6 +16,14 @@ export class BestoptionsComponent {
   ) {}
   consumptionData: Consumption[] = [];
   providerData: Provider[] = [];
+
+  // TO-DO 
+  /**
+   * Add for the spot prices, 
+   * find a way to represent this
+   * add a graph visualization of all
+   * potentially change spot-hourly randomly and spot-monthly randomly?
+   */
   ngOnInit() {
     this.collectData().then(() => {
       this.fixedPrice();
@@ -99,7 +107,7 @@ export class BestoptionsComponent {
       bestOptionTotal.toLocaleString('en-GB', { maximumFractionDigits: 2 }) +
       ' NOK'
     );
-
+      
   }
   /**
    * Collects data from both provider api and consumer api
