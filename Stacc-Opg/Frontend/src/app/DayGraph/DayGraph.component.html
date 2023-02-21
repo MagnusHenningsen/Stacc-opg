@@ -18,8 +18,8 @@
             <li *ngFor="let item of highestConsumptions">
               <ul class="statistics">
                 <li>Date: <span style="color:red">{{ item.date | date : "EEE dd/MM/yyyy" }} </span></li>
-                <li>Total: <span style="color:red">{{ item.consumption | number }} kwh </span></li>
-                <li>Average: <span style="color:red">{{ item.consumption / 24 | number }} kwh </span></li>
+                <li>Avg: <span style="color:red">{{ item.consumption / 24 | number }} kwh </span></li>
+                <li>Total: <span style="color:red">{{ item.consumption  | number }} kwh </span></li>
               </ul>
             </li>
           </ul>
@@ -34,8 +34,8 @@
             <li *ngFor="let item of lowestConsumptions">
               <ul class="statistics" style="color:white">
                 <li>Date: <span style="color:green; text-align: right;">{{ item.date | date : "EEE dd/MM/yyyy" }} </span></li>
-                <li>Total: <span style="color:green; text-align: right;">{{ item.consumption | number }} kwh </span></li>
-                <li>Average: <span style="color:green; text-align: right;">{{ item.consumption / 24 | number }} kwh </span></li>
+                <li>Avg: <span style="color:green; text-align: right;">{{ item.consumption / 24| number }} kwh </span></li>
+                <li>Total: <span style="color:green; text-align: right;">{{ item.consumption  | number }} kwh </span></li>
               </ul>
             </li>
           </ul>

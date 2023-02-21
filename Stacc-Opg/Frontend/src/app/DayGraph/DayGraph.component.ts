@@ -38,7 +38,7 @@ export class DayGraphComponent {
   line: any;
   lowestConsumptions: { date: Date; consumption: number; }[] = [];
   highestConsumptions: { date: Date; consumption: number; }[] = [];
-  
+
   constructor(private consumptionService: ConsumptionService) {}
 
   ngOnInit() {
