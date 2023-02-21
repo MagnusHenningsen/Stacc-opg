@@ -8,7 +8,9 @@ import { ProvidersService } from '../Services/providers.service';
   styleUrls: ['./providers.component.scss']
 })
 export class ProvidersComponent {
+
   constructor(private providerService: ProvidersService) {}
+
   providers: Provider[] = [];
   ngOnInit() {
     this.providerService.getProviders().subscribe((data: any) => {

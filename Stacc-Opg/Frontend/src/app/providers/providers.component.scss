@@ -28,7 +28,7 @@
       border-color: lighten(#30363d, 10%);
       border-radius: 1em;
       box-sizing: border-box;
-      height: 300px;
+      min-height: fit-content;
       width: 350px;
     }
   }
