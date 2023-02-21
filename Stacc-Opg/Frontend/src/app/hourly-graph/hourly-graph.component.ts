@@ -53,7 +53,8 @@ export class HourlyGraphComponent {
           )
       );
       this.ConvertToHours();
-            // collect labels 
+      this.consumptionService.HoursArr = this.ToHours;
+      // collect labels 
       this.lineChartData.labels = this.ToHours.map((hour) => {
         let h = hour[0].from
           .getHours()

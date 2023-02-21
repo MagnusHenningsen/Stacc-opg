@@ -10,6 +10,7 @@ import { NgChartsModule } from 'ng2-charts';
 import { DayGraphComponent } from './DayGraph/DayGraph.component';
 import { HourlyGraphComponent } from './hourly-graph/hourly-graph.component';
 import { DayOfWeekComponent } from './day-of-week/day-of-week.component';
+import { ProvidersComponent } from './providers/providers.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { DayOfWeekComponent } from './day-of-week/day-of-week.component';
     HomeComponent,
     DayGraphComponent,
     HourlyGraphComponent,
-    DayOfWeekComponent
+    DayOfWeekComponent,
+    ProvidersComponent
     ],
   imports: [
     BrowserModule,

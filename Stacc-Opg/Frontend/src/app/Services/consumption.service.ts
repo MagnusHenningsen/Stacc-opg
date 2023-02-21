@@ -6,6 +6,9 @@ import { Consumption } from '../Consumption';
 })
 export class ConsumptionService {
   AUTH_SERVER = "http://localhost:3000";
+  DayOfWeekArr: any[] = [];
+  DateArr: Consumption[][] = [];
+  HoursArr: Consumption[][] = [];
 
   constructor(private http: HttpClient) { }
   /**

@@ -1,0 +1,14 @@
+<div class="content">
+    <ul>
+      <li *ngFor="let provider of providers">
+        <h2>{{ provider.name }}</h2>
+        <p>Pricing Model: {{ provider.pricingModel }}</p>
+        <p>Monthly Fee: {{ provider.monthlyFee }}</p>
+        <p *ngIf="provider.fixedPrice">Fixed Price: {{ provider.fixedPrice }} (for {{ provider.fixedPricePeriod }} months)</p>
+        <p *ngIf="provider.variablePrice">Variable Price: {{ provider.variablePrice }} (for {{ provider.variablePricePeriod }} months)</p>
+        <p *ngIf="provider.spotPrice">Spot Price: {{ provider.spotPrice }}</p>
+        <h3>Explenation:</h3>
+        <p *ngIf="provider.fixedPrice">The fixed pricing model of 0.5 for 12 months means the energy provider will charge a constant rate of 0.5 for every unit of energy consumed for a period of 12 months.</p>
+      </li>
+    </ul>
+  </div>

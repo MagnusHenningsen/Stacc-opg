@@ -53,6 +53,7 @@ export class DayGraphComponent {
           )
       );
       this.ConvertToDays();
+      this.consumptionService.DateArr = this.toDays;
       this.lineChartData.labels = this.toDays.map((day) =>
         day[0].from.toLocaleDateString()
       );

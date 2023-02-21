@@ -17,7 +17,10 @@
         <ul>
           <br>
           <li>
-            Displays your average daily power consumption.
+            Displays your average daily power consumption (Avg hour usage).
+          </li>
+          <li>
+            Displays your total usage on given date.
           </li>
         </ul>
       </li>
@@ -27,7 +30,7 @@
         <ul>
           <br>
           <li>
-            Illustrates the average amount of power you consume throughout the day.
+            Shows the average amount of power you consume throughout the day, hour by hour.
           </li>
         </ul>
       </li>
@@ -44,12 +47,17 @@
     </ul>
   </div>
   
-    <div class="tab" *ngIf="activeBtn == null" id="tab2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum </div>
+    <div class="tab" *ngIf="activeBtn == null" id="tab2" style="align-items: center; justify-content: center;">
+        Explains the differences between potential providers.
+    </div>
     <div class="tab" *ngIf="activeBtn == null" id="tab3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum </div>
     <div *ngIf="activeBtn != null && activeBtn.id == 'btn1'" id="contentDiv">
         <app-DayGraph></app-DayGraph>
         <app-hourly-graph></app-hourly-graph>
         <app-day-of-week></app-day-of-week>
+    </div>
+    <div *ngIf="activeBtn != null && activeBtn.id == 'btn2'" id="contentDiv">
+        <app-providers></app-providers>
     </div>
     
 

@@ -58,7 +58,6 @@ export class DayOfWeekComponent {
       for (let i = 0; i < 7; i++) {
         let total = this.DOW.get(i);
         let avg = total / this.DOWC.get(i);
-        console.log(this.getDayOfWeekString(i));
         dataFormatted.push({
           day: this.getDayOfWeekString(i),
           consumption: avg,
@@ -71,13 +70,10 @@ export class DayOfWeekComponent {
       if (this.chart && this.chart.chart) {
         this.chart.chart.update();
       }
-      console.log(dataFormatted);
+      this.consumptionService.DayOfWeekArr = dataFormatted;
       dataFormatted.sort((a, b) => a.consumption - b.consumption);
       this.lowestConsumptions = dataFormatted.slice(0, 3);
       this.highestConsumptions = dataFormatted.slice(4, 7);
-      console.log(dataFormatted);
-      console.log(this.lowestConsumptions);
-      console.log(this.highestConsumptions);
     });
   }
   /**
@@ -90,7 +86,6 @@ export class DayOfWeekComponent {
       this.DOWC.set(i, 0);
     }
     this.consumptions.forEach((x) => {
-      console.log(x.from.getDay() + ' - ' + x.from.toLocaleString('en-GB'));
       switch (x.from.getDay()) {
         case 0:
           this.setMapValue(6, x);
@@ -133,7 +128,7 @@ export class DayOfWeekComponent {
     this.DOW.set(index, sum);
   }
   getDayOfWeekString(day: number) {
-    console.log(day);
+
     switch (day) {
       case 0:
         return 'Monday';
