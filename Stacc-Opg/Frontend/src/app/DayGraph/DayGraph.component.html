@@ -1,9 +1,46 @@
-<div style="display: flex; flex-wrap: wrap;">
-    <canvas baseChart width="400" height="400"
-      [type]="'line'"
-      [data]="lineChartData"
-      [options]="lineChartOptions"
-      [legend]="lineChartLegend">
-    </canvas>
+<div class="container">
+  <canvas
+    baseChart width="450" height="450"
+    [type]="'line'"
+    [data]="lineChartData"
+    [options]="lineChartOptions"
+    [legend]="lineChartLegend"
+    (chartClick)="chartClicked($event)"
+  >
+  </canvas>
+
+  <div class="content-container">
+    <div *ngIf="clicked" class="infoList">
+      <ul>
+        <li>
+          <Strong>Highest consumption</Strong>
+          <ul>
+            <li *ngFor="let item of highestConsumptions">
+              <ul class="listBox">
+                <li>Date: {{ item.date | date : "EEE dd/MM.yyyy" }}</li>
+                <li>Total Consumption: {{ item.consumption | number }} KwH</li>
+                <li>Average Hourly: {{ item.consumption / 24 | number }} KwH</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="clicked" class="infoList">
+      <ul>
+        <li>
+          <Strong>Lowest consumption</Strong>
+          <ul>
+            <li *ngFor="let item of lowestConsumptions">
+              <ul class="listBox">
+                <li>Date: {{ item.date | date : "EEE dd/MM.yyyy" }}</li>
+                <li>Total Consumption: {{ item.consumption | number }} KwH</li>
+                <li>Average Hourly: {{ item.consumption / 24 | number }} KwH</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </div>
-  
+</div>

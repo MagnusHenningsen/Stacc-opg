@@ -1,6 +1,6 @@
 .buttons {
   background-color: #0d1117;
-  width: min(90%);
+  width: min(100%);
   margin-inline: auto;
   margin-top: 5px;
   display: flex;
@@ -47,12 +47,13 @@
 .content {
   color: white;
   background-color: #161b22;
-  width: min(90% - 6px);
+  width: min(100% - 6px);
   min-height: 400px;
   margin-inline: auto;
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
+  
   border-style: solid;
   border-color: lighten(#30363d, 10%);
   border-top: none;
@@ -65,12 +66,13 @@
     padding: 5px;
     display: flex;
     flex: 1 0 250px;
-    height: 400px;
+    height: inherit;
     text-align: center;
     text-justify: center;
-    border-style: solid;
     border-color: lighten(#30363d, 10%);
+    border-style: solid;
     border-radius: 1em;
+
   }
   #contentDiv {
     display: flex;
@@ -78,10 +80,12 @@
     border-bottom-left-radius: 1em;
     border-bottom-right-radius: 1em;
 
-    min-height: 400px;
+    min-height: 800px;
     width: 100%;
+
     justify-content: center;
     align-items: center;
 
   }
+
 }
