@@ -17,7 +17,7 @@ export class HourlyGraphComponent {
     datasets: [
       {
         data: [],
-        label: 'Consumption',
+        label: 'Average By Hour',
         fill: true,
         tension: 0.5,
         borderColor: 'rgba(50,50,200,0.3)',
@@ -34,9 +34,11 @@ export class HourlyGraphComponent {
   line: any;
 
   constructor(private consumptionService: ConsumptionService) {}
-
+  // veldig rar data?
   ngOnInit() {
-    let i = 0;
+    /**
+     * Gathers the data from api, sets up data format for graph it for visualization
+     */
     this.consumptionService.getConsumption().subscribe((data: any) => {
       this.consumptions = data.map(
         (item: any) =>

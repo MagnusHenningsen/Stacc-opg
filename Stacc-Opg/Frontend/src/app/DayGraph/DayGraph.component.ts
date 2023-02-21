@@ -17,7 +17,7 @@ export class DayGraphComponent {
     datasets: [
       {
         data: [],
-        label: 'Consumption',
+        label: 'Day Average',
         fill: true,
         tension: 0.5,
         borderColor: 'green',
@@ -36,7 +36,6 @@ export class DayGraphComponent {
   constructor(private consumptionService: ConsumptionService) {}
 
   ngOnInit() {
-    let i = 0;
     this.consumptionService.getConsumption().subscribe((data: any) => {
       this.consumptions = data.map(
         (item: any) =>
@@ -52,7 +51,7 @@ export class DayGraphComponent {
         day[0].from.toLocaleDateString()
       );
       this.lineChartData.datasets[0].data = this.toDays.map(
-        (day) =>
+        (day) => 
           day.reduce((sum, consumption) => sum + consumption.consumption, 0) /
           day.length
       );
