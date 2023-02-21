@@ -1,5 +1,4 @@
 import { Component, ViewChild } from '@angular/core';
-
 import { ConsumptionService } from '../Services/consumption.service';
 import { Consumption } from '../Consumption';
 import { ChartConfiguration, ChartOptions, ChartType } from 'chart.js';
@@ -34,9 +33,11 @@ export class HourlyGraphComponent {
 
   public consumptions: Consumption[] = [];
   line: any;
+  highestConsumptions: { from: string; to: string; consumption: string }[] = [];
+  lowestConsumptions: { from: string; to: string; consumption: string }[] = [];
 
   constructor(private consumptionService: ConsumptionService) {}
-  // veldig rar data?
+
   ngOnInit() {
     /**
      * Gathers the data from api, sets up data format for graph it for visualization
@@ -52,6 +53,7 @@ export class HourlyGraphComponent {
           )
       );
       this.ConvertToHours();
+            // collect labels 
       this.lineChartData.labels = this.ToHours.map((hour) => {
         let h = hour[0].from
           .getHours()
@@ -61,12 +63,53 @@ export class HourlyGraphComponent {
           .toLocaleString('en-GB', { minimumIntegerDigits: 2 });
         return `Kl: ${h}:${m}`;
       });
+      // set data
       this.lineChartData.datasets[0].data = this.ToHours.map((hour) => {
-        return hour.reduce((sum, consumption) => sum + consumption.consumption, 0) / hour.length;
+        return (
+          hour.reduce((sum, consumption) => sum + consumption.consumption, 0) /
+          hour.length
+        );
       });
+      // update chart
       if (this.chart && this.chart.chart) {
         this.chart.chart.update();
       }
+      const hourlyConsumptions = this.ToHours.map((hour) => ({
+        from: hour[0].from,
+        to: hour[hour.length - 1].to,
+        consumption:
+          hour.reduce((sum, consumption) => sum + consumption.consumption, 0) /
+          hour.length,
+      }));
+      const sortedHourlyConsumptions = hourlyConsumptions.sort(
+        (a, b) => b.consumption - a.consumption
+      );
+      this.highestConsumptions = sortedHourlyConsumptions
+        .slice(0, 3)
+        .map((item) => ({
+          from: item.from.toLocaleString('en-GB', {
+            hour: '2-digit',
+            minute: '2-digit',
+          }),
+          to: item.to.toLocaleString('en-GB', {
+            hour: '2-digit',
+            minute: '2-digit',
+          }),
+          consumption: item.consumption.toFixed(2),
+        }));
+      this.lowestConsumptions = sortedHourlyConsumptions
+        .slice(-3)
+        .map((item) => ({
+          from: item.from.toLocaleString('en-GB', {
+            hour: '2-digit',
+            minute: '2-digit',
+          }),
+          to: item.to.toLocaleString('en-GB', {
+            hour: '2-digit',
+            minute: '2-digit',
+          }),
+          consumption: item.consumption.toFixed(2),
+        }));
     });
   }
   /**
@@ -84,4 +127,8 @@ export class HourlyGraphComponent {
     });
     console.log(this.ToHours);
   }
+  clicked: boolean = false;
+  chartClicked($event: { event?: import("chart.js").ChartEvent|undefined; active?: {}[]|undefined; }) {
+      this.clicked = !this.clicked;
+    }
 }

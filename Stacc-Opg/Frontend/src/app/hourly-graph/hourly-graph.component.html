@@ -1,8 +1,46 @@
-<div style="display: block;">
-    <canvas baseChart width="450" height="450"
-      [type]="'line'"
-      [data]="lineChartData"
-      [options]="lineChartOptions"
-      [legend]="lineChartLegend">
-    </canvas>
+<div class="container">
+  <canvas
+    baseChart width="450" height="450"
+    [type]="'line'"
+    [data]="lineChartData"
+    [options]="lineChartOptions"
+    [legend]="lineChartLegend"
+    (chartClick)="chartClicked($event)"
+  >
+  </canvas>
+
+  <div class="content-container">
+    <div *ngIf="clicked" class="infoList">
+      <ul>
+        <li style="text-align: center;">
+          <Strong>Highest consumption</Strong>
+          <ul>
+            <li *ngFor="let item of highestConsumptions">
+              <ul class="statistics" style="color:white">
+                <li>Start Time: <span class="highest">{{item.from}}</span></li>
+                <li>Stop Time:   <span class="highest">{{item.to}}</span></li>
+                <li>Consumption: <span class="highest">{{item.consumption}} kwh</span></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="clicked" class="infoList">
+      <ul>
+        <li style="text-align: center;">
+          <Strong>Lowest consumption</Strong>
+          <ul>
+            <li *ngFor="let item of lowestConsumptions">
+              <ul class="statistics">
+                <li>Start Time: <span class="lowest">{{item.from}}</span></li>
+                <li>Stop Time:   <span class="lowest">{{item.to}}</span></li>
+                <li>Consumption: <span class="lowest">{{item.consumption}} kwh</span></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </div>
+</div>

@@ -1,0 +1,53 @@
+.container {
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+    gap: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        margin: 5px;
+      }
+    }
+  }
+  .infoList {
+    width: 50%;
+  }
+  .infoList li {
+    text-align: left;
+    color: white;
+  }
+
+  .content-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .statistics {
+    border-color: lighten(#30363d, 10%);
+    border-radius: 1em;
+    border-style: solid;
+    background-color: #30363d;
+  }
+  .highest {
+    color: red;
+  }
+  .lowest {
+    color: green;
+  }
+
+ 
+  
+  
+  
+  
+  
+  
