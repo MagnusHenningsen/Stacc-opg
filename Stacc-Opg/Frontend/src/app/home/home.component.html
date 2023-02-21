@@ -46,11 +46,25 @@
       </li>
     </ul>
   </div>
-  
-    <div class="tab" *ngIf="activeBtn == null" id="tab2" style="align-items: center; justify-content: center;">
-        Explains the differences between potential providers.
+    <div class="tab" *ngIf="activeBtn == null" id="tab2" style="align-items: center; justify-content: center; text-align: left;">
+      <ul>
+        <li>
+          Explains the differences between potential providers.
+        </li>
+        <br>
+        <li>
+          Shows available deals 
+        </li>
+      </ul>  
+      
     </div>
-    <div class="tab" *ngIf="activeBtn == null" id="tab3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum </div>
+    <div class="tab" *ngIf="activeBtn == null" id="tab3" style="align-items: center; justify-content: center;text-align: left;">
+        <ul>
+          <li>Our suggestions for your choice of provider.</li>
+          <br>
+          <li>An estimate for what your price for your recent consumption would be given each provider</li>
+        </ul>
+    </div>
     <div *ngIf="activeBtn != null && activeBtn.id == 'btn1'" id="contentDiv">
         <app-DayGraph></app-DayGraph>
         <app-hourly-graph></app-hourly-graph>
@@ -59,6 +73,7 @@
     <div *ngIf="activeBtn != null && activeBtn.id == 'btn2'" id="contentDiv">
         <app-providers></app-providers>
     </div>
-    
-
+    <div *ngIf="activeBtn != null && activeBtn.id == 'btn3'" id="contentDiv">
+        <app-bestoptions></app-bestoptions>
+    </div>
 </div>
