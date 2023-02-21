@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 import { ConsumptionService } from '../Services/consumption.service';
 import { Consumption } from '../Consumption';
 import { ChartConfiguration, ChartOptions, ChartType } from 'chart.js';
+import { BaseChartDirective } from 'ng2-charts';
 
 @Component({
   selector: 'app-hourly-graph',
@@ -10,6 +11,7 @@ import { ChartConfiguration, ChartOptions, ChartType } from 'chart.js';
   styleUrls: ['./hourly-graph.component.scss'],
 })
 export class HourlyGraphComponent {
+  @ViewChild(BaseChartDirective) chart!: BaseChartDirective;
   title = 'Average Consumption (Hour)';
 
   public lineChartData: ChartConfiguration<'line'>['data'] = {
@@ -20,7 +22,7 @@ export class HourlyGraphComponent {
         label: 'Average By Hour',
         fill: true,
         tension: 0.5,
-        borderColor: 'rgba(50,50,200,0.3)',
+        borderColor: 'rgb(50,50,200)',
         backgroundColor: 'rgba(50,50,200,0.3)',
       },
     ],
@@ -62,6 +64,9 @@ export class HourlyGraphComponent {
       this.lineChartData.datasets[0].data = this.ToHours.map((hour) => {
         return hour.reduce((sum, consumption) => sum + consumption.consumption, 0) / hour.length;
       });
+      if (this.chart && this.chart.chart) {
+        this.chart.chart.update();
+      }
     });
   }
   /**

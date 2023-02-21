@@ -36,12 +36,7 @@ export class HomeComponent {
   placeContent(id: string) {
     if (id == 'btn1' && this.activeBtn != null) {
       this.loading = true;
-      this.consumptionService.getConsumption().subscribe((data: any) => {
-        this.consumptions = data.map((item: any) => new Consumption(item.from, item.to, item.consumption, item.consumptionUnit));
-        console.log(this.consumptions);
-      });
-      
-     
+      this.consumptionService.getConsumption();     
       this.loading = true;
     }
   }

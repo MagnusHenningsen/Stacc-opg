@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
-
+import { Component, ViewChild } from '@angular/core';
 import { ConsumptionService } from '../Services/consumption.service';
 import { Consumption } from '../Consumption';
 import { ChartConfiguration, ChartOptions, ChartType } from 'chart.js';
+import { BaseChartDirective } from 'ng2-charts';
 
 @Component({
   selector: 'app-DayGraph',
@@ -10,8 +10,10 @@ import { ChartConfiguration, ChartOptions, ChartType } from 'chart.js';
   styleUrls: ['./DayGraph.component.scss'],
 })
 export class DayGraphComponent {
-  title = 'Consumption chart';
+  @ViewChild(BaseChartDirective) chart!: BaseChartDirective;
 
+  title = 'Consumption chart';
+  toDays: Consumption[][] = [];
   public lineChartData: ChartConfiguration<'line'>['data'] = {
     labels: [],
     datasets: [
@@ -55,12 +57,15 @@ export class DayGraphComponent {
           day.reduce((sum, consumption) => sum + consumption.consumption, 0) /
           day.length
       );
+      if (this.chart && this.chart.chart) {
+        this.chart.chart.update();
+      }
     });
   }
+
   /**
    * Convert initial input to be the consumption of a day
    */
-  toDays: Consumption[][] = [];
   ConvertToDays() {
     let date: number | null = null;
     let day: Consumption[] = [];
@@ -76,20 +81,5 @@ export class DayGraphComponent {
       day.push(x);
     });
     this.toDays.push(day);
-  }
-  /**
-   * Sort the hours, will be used for the average consumption throughout the day
-   */
-  toHours: Consumption[][] = [];
-  ConvertToHours() {
-    this.toHours = [];
-    for (let i = 0; i < 24; i++) {
-      this.toHours[i] = [];
-    }
-    this.consumptions.forEach((x) => {
-      let h = x.from.getHours();
-      this.toHours[h].push(x);
-    });
-    console.log(this.toHours);
   }
 }
