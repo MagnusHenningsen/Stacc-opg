@@ -16,7 +16,14 @@
       }
     }
   }
-  
+  .infoList {
+    width: 50%;
+  }
+  .infoList li {
+    text-align: left;
+    color: white;
+  }
+
   .content-container {
     display: flex;
     flex-direction: row;
@@ -24,12 +31,13 @@
     align-items: flex-start;
     gap: 10px;
   }
-  .listBox {
+  .statistics {
     border-color: lighten(#30363d, 10%);
     border-radius: 1em;
     border-style: solid;
-    
+    background-color: #30363d;
   }
+
  
   
   

@@ -12,14 +12,14 @@
   <div class="content-container">
     <div *ngIf="clicked" class="infoList">
       <ul>
-        <li>
+        <li style="text-align: center;">
           <Strong>Highest consumption</Strong>
           <ul>
             <li *ngFor="let item of highestConsumptions">
-              <ul class="listBox">
-                <li>Date: {{ item.date | date : "EEE dd/MM.yyyy" }}</li>
-                <li>Total Consumption: {{ item.consumption | number }} KwH</li>
-                <li>Average Hourly: {{ item.consumption / 24 | number }} KwH</li>
+              <ul class="statistics">
+                <li>Date: <span style="color:red">{{ item.date | date : "EEE dd/MM/yyyy" }} </span></li>
+                <li>Total: <span style="color:red">{{ item.consumption | number }} kwh </span></li>
+                <li>Average: <span style="color:red">{{ item.consumption / 24 | number }} kwh </span></li>
               </ul>
             </li>
           </ul>
@@ -28,14 +28,14 @@
     </div>
     <div *ngIf="clicked" class="infoList">
       <ul>
-        <li>
+        <li style="text-align: center;">
           <Strong>Lowest consumption</Strong>
           <ul>
             <li *ngFor="let item of lowestConsumptions">
-              <ul class="listBox">
-                <li>Date: {{ item.date | date : "EEE dd/MM.yyyy" }}</li>
-                <li>Total Consumption: {{ item.consumption | number }} KwH</li>
-                <li>Average Hourly: {{ item.consumption / 24 | number }} KwH</li>
+              <ul class="statistics" style="color:white">
+                <li>Date: <span style="color:green; text-align: right;">{{ item.date | date : "EEE dd/MM/yyyy" }} </span></li>
+                <li>Total: <span style="color:green; text-align: right;">{{ item.consumption | number }} kwh </span></li>
+                <li>Average: <span style="color:green; text-align: right;">{{ item.consumption / 24 | number }} kwh </span></li>
               </ul>
             </li>
           </ul>
