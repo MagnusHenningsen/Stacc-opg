@@ -13,20 +13,17 @@
   <div class="tab" *ngIf="activeBtn == null" id="tab1">
     <ul>
       <li style="text-align: left;">
-        Consumption by Date
+        Average Hourly Consumption By Date
         <ul>
           <br>
           <li>
-            Displays your average daily power consumption (Avg hour usage).
-          </li>
-          <li>
-            Displays your total usage on given date.
+            Shows average hourly consumption on each given date.
           </li>
         </ul>
       </li>
       <br>
       <li style="text-align: left;">
-        Consumption by Time of Day
+        Average Consumption By Hour
         <ul>
           <br>
           <li>
@@ -36,7 +33,7 @@
       </li>
       <br>
       <li style="text-align: left;">
-        Consumption by Day of the Week
+        Average Consumption By Day of Week
         <ul>
           <br>
           <li>
@@ -60,9 +57,9 @@
     </div>
     <div class="tab" *ngIf="activeBtn == null" id="tab3" style="align-items: center; justify-content: center;text-align: left;">
         <ul>
-          <li>Our suggestions for your choice of provider.</li>
+          <li>Our recommendation for your choice of provider and plan.</li>
           <br>
-          <li>An estimate for what your price for your recent consumption would be given each provider</li>
+          <li>An estimated price for the best providers of each pricing model.</li>
         </ul>
     </div>
     <div class="hint" *ngIf="activeBtn != null && activeBtn.id == 'btn1'">

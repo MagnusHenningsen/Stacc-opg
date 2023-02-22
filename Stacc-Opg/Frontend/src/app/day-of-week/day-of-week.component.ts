@@ -23,7 +23,7 @@ export class DayOfWeekComponent {
     datasets: [
       {
         data: [],
-        label: 'Average By Day of Week',
+        label: 'Average Consumption By Day of Week',
         fill: true,
         tension: 0.5,
         borderColor: 'rgb(200,50,50)',
