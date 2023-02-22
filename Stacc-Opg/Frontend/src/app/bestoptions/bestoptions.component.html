@@ -1,1 +1,100 @@
-<p>bestoptions works!</p>
+<div *ngIf="recommendedOption" class="recommendation">
+    <div>
+        <h2 style="text-align:center">Our recommendation</h2>
+        <p>Provider: {{recommendedOption.name}}</p>
+        <p>Pricing Model: {{recommendedOption.pricingModel}}</p>
+        <p *ngIf="recommendedOption.pricingModel == 'fixed'">Price period: {{recommendedOption.fixedPricePeriod!}} month<span *ngIf="recommendedOption.fixedPricePeriod! > 1">s</span></p>
+        <p *ngIf="recommendedOption.pricingModel == 'variable'">Price period: {{recommendedOption.variablePricePeriod!}} month<span *ngIf="recommendedOption.variablePricePeriod! > 1">s</span></p>
+        
+    </div>
+  </div>
+<div class="content">
+  <div *ngIf="bestFixedOption" class="optionContent" id="bestFixedOption">
+    <h3 style="text-align: center">
+      Best {{ bestFixedOption.pricingModel }} pricing option
+    </h3>
+    <p>Provider: {{ bestFixedOption.name }}</p>
+    <p>Fixed price: {{ bestFixedOption.fixedPrice }} NOK</p>
+    <p>
+      Price period: {{ bestFixedOption.fixedPricePeriod }} month<span
+        *ngIf="bestFixedOption.fixedPricePeriod! > 1"
+        >s</span
+      >
+    </p>
+    <p>Monthly fee: {{ bestFixedOption.monthlyFee }} NOK</p>
+    <ul *ngIf="FixedPros.length > 0">
+      <li *ngFor="let pro of FixedPros" style="color: green">
+        {{ pro }}
+      </li>
+    </ul>
+    <br />
+    <ul *ngIf="FixedCons.length > 0">
+      <li *ngFor="let con of FixedCons" style="color: red">
+        {{ con }}
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="bestVarOption" class="optionContent" id="bestVarOption">
+    <h3 style="text-align: center">
+      Best {{ bestVarOption.pricingModel }} pricing option
+    </h3>
+    <p>Provider: {{ bestVarOption.name }}</p>
+    <p>Variable price: {{ bestVarOption.variablePrice }} NOK</p>
+    <p>
+      Price period: {{ bestVarOption.variablePricePeriod }} month<span
+        *ngIf="bestVarOption.fixedPricePeriod! > 1"
+        >s</span
+      >
+    </p>
+    <p>Monthly fee: {{ bestVarOption.monthlyFee }} NOK</p>
+    <ul *ngIf="VariablePros.length > 0">
+      <li *ngFor="let pro of VariablePros" style="color: green">
+        {{ pro }}
+      </li>
+    </ul>
+    <br />
+    <ul *ngIf="VariableCons.length > 0">
+      <li *ngFor="let con of VariableCons" style="color: red">
+        {{ con }}
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="bestSpotHourly" class="optionContent" id="bestSpotHourly">
+    <h3 style="text-align: center">
+      Best {{ bestSpotHourly.pricingModel }} pricing option
+    </h3>
+    <p>Provider: {{ bestSpotHourly.name }}</p>
+    <p>Spot price: {{ bestSpotHourly.spotPrice }} NOK</p>
+    <p>Monthly fee: {{ bestSpotHourly.monthlyFee }} NOK</p>
+    <ul *ngIf="SpotHourlyPros.length > 0">
+      <li *ngFor="let pro of SpotHourlyPros" style="color: green">
+        {{ pro }}
+      </li>
+    </ul>
+    <br />
+    <ul *ngIf="SpotHourlyCons.length > 0">
+      <li *ngFor="let con of SpotHourlyCons" style="color: red">
+        {{ con }}
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="bestSpotMonthly" class="optionContent" id="bestSpotMonthly">
+    <h3 style="text-align: center">
+      Best {{ bestSpotMonthly.pricingModel }} pricing option
+    </h3>
+    <p>Provider: {{ bestSpotMonthly.name }}</p>
+    <p>Spot price: {{ bestSpotMonthly.spotPrice }} NOK</p>
+    <p>Monthly fee: {{ bestSpotMonthly.monthlyFee }} NOK</p>
+    <ul *ngIf="SpotMonthlyPros.length > 0">
+      <li *ngFor="let pro of SpotMonthlyPros" style="color: green">
+        {{ pro }}
+      </li>
+    </ul>
+    <br />
+    <ul *ngIf="SpotMonthlyCons.length > 0">
+      <li *ngFor="let con of SpotMonthlyCons" style="color: red">
+        {{ con }}
+      </li>
+    </ul>
+  </div>
+</div>

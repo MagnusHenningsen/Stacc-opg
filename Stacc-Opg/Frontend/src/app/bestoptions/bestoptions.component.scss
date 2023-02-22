@@ -1,0 +1,46 @@
+
+.content {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    text-align: left;
+    gap: 20px;
+
+}
+.recommendation {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    text-align: left;
+    gap: 20px;
+    div {
+        padding: 10px;
+        background-color: #161b22;
+        border-style: solid;
+        border-color: green;
+        border-radius: 1em;
+        box-sizing: border-box;
+        min-height: fit-content;
+        width: 350px;
+        margin-bottom: 20px;
+    }
+
+}
+.optionContent {
+    padding: 10px;
+    background-color: #161b22;
+    border-style: solid;
+    border-color: lighten(#30363d, 10%);
+    border-radius: 1em;
+    box-sizing: border-box;
+    min-height: fit-content;
+    width: 350px;
+}

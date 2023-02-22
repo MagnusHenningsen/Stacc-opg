@@ -1,56 +1,28 @@
 [
-    {
-      "name": "Vest Energi",
-      "pricingModel": "fixed",
-      "monthlyFee": 0,
-      "fixedPrice": 0.5,
-      "fixedPricePeriod": 12
-    },
-    {
-      "name": "Vastly Energi",
-      "pricingModel": "fixed",
-      "monthlyFee": 0,
-      "fixedPrice": 0.5,
-      "fixedPricePeriod": 6
-    },
-    {
-      "name": "Vosto Energi",
-      "pricingModel": "fixed",
-      "monthlyFee": 500,
-      "fixedPrice": 0.2,
-      "fixedPricePeriod": 36
-    },
-    {
-      "name": "Øst Energi",
-      "pricingModel": "variable",
-      "monthlyFee": 0,
-      "variablePrice": 0.5,
-      "variablePricePeriod": 12
-    },
-    {
-      "name": "Ost Energi",
-      "pricingModel": "variable",
-      "monthlyFee": 250,
-      "variablePrice": 0.4,
-      "variablePricePeriod": 6
-    },
-    {
-      "name": "AST Energi",
-      "pricingModel": "variable",
-      "monthlyFee": 250,
-      "variablePrice": 0.4,
-      "variablePricePeriod": 3
-    },
-    {
-      "name": "Nord Energi",
-      "pricingModel": "spot-hourly",
-      "monthlyFee": 0,
-      "spotPrice": 0.5
-    },
-    {
-      "name": "Nord Energi",
-      "pricingModel": "spot-monthly",
-      "monthlyFee": 0,
-      "spotPrice": 0.5
-    }
-  ]
+  {
+    "name": "Vest Energi",
+    "pricingModel": "fixed",
+    "monthlyFee": 0,
+    "fixedPrice": 0.5,
+    "fixedPricePeriod": 12
+  },
+  {
+    "name": "Øst Energi",
+    "pricingModel": "variable",
+    "monthlyFee": 0,
+    "variablePrice": 0.5,
+    "variablePricePeriod": 12
+  },
+  {
+    "name": "Nord Energi",
+    "pricingModel": "spot-hourly",
+    "monthlyFee": 0,
+    "spotPrice": 0.5
+  },
+  {
+    "name": "Nord Energi",
+    "pricingModel": "spot-monthly",
+    "monthlyFee": 0,
+    "spotPrice": 0.5
+  }
+]

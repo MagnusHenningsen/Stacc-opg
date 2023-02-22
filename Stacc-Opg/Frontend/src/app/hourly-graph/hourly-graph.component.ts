@@ -111,6 +111,7 @@ export class HourlyGraphComponent {
           }),
           consumption: item.consumption.toFixed(2),
         }));
+        this.lowestConsumptions.reverse();
     });
   }
   /**
@@ -126,7 +127,6 @@ export class HourlyGraphComponent {
       let h = x.from.getHours();
       this.ToHours[h].push(x);
     });
-    console.log(this.ToHours);
   }
   clicked: boolean = false;
   chartClicked($event: { event?: import("chart.js").ChartEvent|undefined; active?: {}[]|undefined; }) {

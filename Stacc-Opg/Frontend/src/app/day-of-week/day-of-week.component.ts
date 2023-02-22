@@ -74,6 +74,7 @@ export class DayOfWeekComponent {
       dataFormatted.sort((a, b) => a.consumption - b.consumption);
       this.lowestConsumptions = dataFormatted.slice(0, 3);
       this.highestConsumptions = dataFormatted.slice(4, 7);
+      this.highestConsumptions.reverse();
     });
   }
   /**
