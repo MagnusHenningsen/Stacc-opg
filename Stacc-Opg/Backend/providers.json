@@ -1,28 +1,78 @@
 [
-  {
-    "name": "Vest Energi",
-    "pricingModel": "fixed",
-    "monthlyFee": 0,
-    "fixedPrice": 0.5,
-    "fixedPricePeriod": 12
-  },
-  {
-    "name": "Øst Energi",
-    "pricingModel": "variable",
-    "monthlyFee": 0,
-    "variablePrice": 0.5,
-    "variablePricePeriod": 12
-  },
-  {
-    "name": "Nord Energi",
-    "pricingModel": "spot-hourly",
-    "monthlyFee": 0,
-    "spotPrice": 0.5
-  },
-  {
-    "name": "Nord Energi",
-    "pricingModel": "spot-monthly",
-    "monthlyFee": 0,
-    "spotPrice": 0.5
-  }
-]
+    {
+      "name": "Vest Energi",
+      "pricingModel": "fixed",
+      "monthlyFee": 0,
+      "fixedPrice": 0.5,
+      "fixedPricePeriod": 12
+    },
+    {
+      "name": "Vastly Energi",
+      "pricingModel": "fixed",
+      "monthlyFee": 0,
+      "fixedPrice": 0.5,
+      "fixedPricePeriod": 6
+    },
+    {
+      "name": "Vosto Energi",
+      "pricingModel": "fixed",
+      "monthlyFee": 400,
+      "fixedPrice": 0.4,
+      "fixedPricePeriod": 36
+    },
+    {
+      "name": "Øst Energi",
+      "pricingModel": "variable",
+      "monthlyFee": 0,
+      "variablePrice": 0.5,
+      "variablePricePeriod": 12
+    },
+    {
+      "name": "Ost Energi",
+      "pricingModel": "variable",
+      "monthlyFee": 250,
+      "variablePrice": 0.4,
+      "variablePricePeriod": 6
+    },
+    {
+      "name": "AST Energi",
+      "pricingModel": "variable",
+      "monthlyFee": 250,
+      "variablePrice": 0.4,
+      "variablePricePeriod": 3
+    },
+    {
+      "name": "Nord Energi",
+      "pricingModel": "spot-hourly",
+      "monthlyFee": 0,
+      "spotPrice": 0.5
+    },
+    {
+      "name": "Bergen Energi",
+      "pricingModel": "spot-hourly",
+      "monthlyFee": 200,
+      "spotPrice": 0.4
+    },
+    {
+      "name": "Energetic Energi",
+      "pricingModel": "spot-hourly",
+      "monthlyFee": 500,
+      "spotPrice": 0.3
+    },
+    {
+      "name": "Nord Energi",
+      "pricingModel": "spot-monthly",
+      "monthlyFee": 0,
+      "spotPrice": 0.5
+    },    {
+      "name": "Nard Energi",
+      "pricingModel": "spot-monthly",
+      "monthlyFee": 200,
+      "spotPrice": 0.45
+    },    {
+      "name": "Angry Energi",
+      "pricingModel": "spot-monthly",
+      "monthlyFee": 500,
+      "spotPrice": 0.35
+    }
+  ]

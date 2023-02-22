@@ -9,7 +9,7 @@
     </div>
   </div>
 <div class="content">
-  <div *ngIf="bestFixedOption" class="optionContent" id="bestFixedOption">
+  <div *ngIf="bestFixedOption" class="optionContent" id="fixed">
     <h3 style="text-align: center">
       Best {{ bestFixedOption.pricingModel }} pricing option
     </h3>
@@ -34,7 +34,7 @@
       </li>
     </ul>
   </div>
-  <div *ngIf="bestVarOption" class="optionContent" id="bestVarOption">
+  <div *ngIf="bestVarOption" class="optionContent" id="variable">
     <h3 style="text-align: center">
       Best {{ bestVarOption.pricingModel }} pricing option
     </h3>
@@ -59,7 +59,7 @@
       </li>
     </ul>
   </div>
-  <div *ngIf="bestSpotHourly" class="optionContent" id="bestSpotHourly">
+  <div *ngIf="bestSpotHourly" class="optionContent" id="spot-hourly">
     <h3 style="text-align: center">
       Best {{ bestSpotHourly.pricingModel }} pricing option
     </h3>
@@ -78,7 +78,7 @@
       </li>
     </ul>
   </div>
-  <div *ngIf="bestSpotMonthly" class="optionContent" id="bestSpotMonthly">
+  <div *ngIf="bestSpotMonthly" class="optionContent" id="spot-monthly">
     <h3 style="text-align: center">
       Best {{ bestSpotMonthly.pricingModel }} pricing option
     </h3>

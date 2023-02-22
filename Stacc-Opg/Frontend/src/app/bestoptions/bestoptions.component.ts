@@ -18,20 +18,16 @@ export class BestoptionsComponent {
   providerData: Provider[] = [];
   recommendedOption: Provider | null = null;
 
-  // TO-DO
-  /**
-   * Add for the spot prices,
-   * find a way to represent this
-   * add a graph visualization of all
-   * potentially change spot-hourly randomly and spot-monthly randomly?
-   */
   ngOnInit() {
     this.collectData().then(() => {
       this.fixedPrice();
       this.variablePrice();
       this.spotPrice(true);
       this.spotPrice(false);
-      this.recommendedOption = this.recommendation();
+      setTimeout(() => {
+        this.recommendedOption = this.recommendation();
+      }, 0);
+      
     });
   }
   bestFixedOption: Provider | null = null;
@@ -412,23 +408,14 @@ recommendation() {
             typeOrder.set('spot-monthly', 1);
             typeOrder.set('variable', 2);
             typeOrder.set('fixed', 3);
-            console.log("A: ");
-            console.log(a.Provider);
-            console.log("total: " + a.total);
-            console.log("type: " + a.type);
-            console.log(typeOrder.get(a.type));
-            console.log("B: ");
-            console.log(b.Provider);
-            console.log("total: " + b.total);
-            console.log("type: "+b.type);
-            console.log(typeOrder.get(b.type));
             return typeOrder.get(a.type) - typeOrder.get(b.type);
         }
     });
 
     const best = options[0];
     console.log(best.Provider);
-
+    let el = document.getElementById(best.type) as HTMLElement;
+    el.style.borderColor = "green";
     return best.Provider;
 }
   /**
