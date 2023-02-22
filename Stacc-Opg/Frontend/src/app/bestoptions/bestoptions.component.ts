@@ -111,7 +111,7 @@ export class BestoptionsComponent {
       this.bestFixedOption!.fixedPricePeriod! <
       avgPricePeriod / potentialProviders.length
     ) {
-      this.FixedCons.push(
+      this.FixedPros.push(
         `Shorter price period than average in category (${this.bestFixedOption!
           .fixedPricePeriod!} months vs ${
           avgPricePeriod / potentialProviders.length
