@@ -11,7 +11,7 @@
   .contentBtn {
     color: white;
     font-size: large;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     background-color: darken(#161b22, 10%);
     border-color: lighten(#30363d, 10%);
     width: 20%;
@@ -39,7 +39,7 @@
       border-color: lighten(#30363d, 10%);
 
       border-bottom: none;
-      
+
       text-decoration: underline;
     }
   }
@@ -53,7 +53,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
-  
+
   border-style: solid;
   border-color: lighten(#30363d, 10%);
   border-top: none;
@@ -62,7 +62,7 @@
 
   .tab {
     font-size: large;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     padding: 5px;
     display: flex;
     flex: 1 0 250px;
@@ -72,7 +72,6 @@
     border-color: lighten(#30363d, 10%);
     border-style: solid;
     border-radius: 1em;
-
   }
   #contentDiv {
     display: flex;
@@ -86,7 +85,11 @@
 
     justify-content: center;
     align-items: center;
-
   }
-
+}
+.hint {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }

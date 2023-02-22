@@ -65,7 +65,10 @@
           <li>An estimate for what your price for your recent consumption would be given each provider</li>
         </ul>
     </div>
-    <div *ngIf="activeBtn != null && activeBtn.id == 'btn1'" id="contentDiv">
+    <div class="hint" *ngIf="activeBtn != null && activeBtn.id == 'btn1'">
+      <p><i>Click the graphs to reveal/hide points of interest.</i></p>
+   </div>
+    <div *ngIf="activeBtn != null && activeBtn.id == 'btn1'" id="contentDiv"> 
         <app-DayGraph></app-DayGraph>
         <app-hourly-graph></app-hourly-graph>
         <app-day-of-week></app-day-of-week>

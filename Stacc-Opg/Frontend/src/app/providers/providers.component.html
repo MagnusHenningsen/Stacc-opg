@@ -7,7 +7,7 @@
         <p *ngIf="provider.fixedPrice">Fixed Price: {{ provider.fixedPrice }} NOK (for {{ provider.fixedPricePeriod }} months)</p>
         <p *ngIf="provider.variablePrice">Variable Price: {{ provider.variablePrice }} NOK (for {{ provider.variablePricePeriod }} months)</p>
         <p *ngIf="provider.spotPrice">Spot Price: {{ provider.spotPrice }} NOK</p>
-        <h3>Explenation:</h3>
+        <h3>Explanation:</h3>
         <p *ngIf="provider.pricingModel == 'fixed'">The {{provider.pricingModel}} pricing model means {{provider.name}} will charge a constant rate for every kwh consumed for a {{provider.pricingModel}} amount of time.<br><br>
         In this scenario {{provider.name}} charges a base monthly fee of {{provider.monthlyFee}} NOK and <span *ngIf="provider.monthlyFee==0">instead</span><span *ngIf="provider.monthlyFee > 0">additionally</span> charges a {{provider.pricingModel}} price of {{provider.fixedPrice}} NOK per kwh for a period of {{provider.fixedPricePeriod}} month<span *ngIf="provider.fixedPricePeriod! > 1">s</span>.</p>
         <p *ngIf="provider.pricingModel == 'variable'">The {{provider.pricingModel}} pricing model means that the price charged by {{provider.name}} varies over time.<br><br> In this scenario {{provider.name}} charges a base monthly fee of {{provider.monthlyFee}} NOK and a {{provider.pricingModel}} price {{provider.variablePrice}} NOK per kwh.<br><br> The amount charged may be adjusted every {{provider.variablePricePeriod}} month<span *ngIf="provider.variablePricePeriod! > 1">s</span></p>

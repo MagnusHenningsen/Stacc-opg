@@ -20,7 +20,7 @@ export class DayGraphComponent {
     datasets: [
       {
         data: [],
-        label: 'Average By Date',
+        label: 'Average Hourly Consumption By Date',
         fill: true,
         tension: 0.5,
         borderColor: 'rgb(50,200,50)',
