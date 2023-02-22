@@ -18,7 +18,7 @@ export class HourlyGraphComponent {
     datasets: [
       {
         data: [],
-        label: 'Average By Hour',
+        label: 'Average Consumption By Hour',
         fill: true,
         tension: 0.5,
         borderColor: 'rgb(50,50,200)',

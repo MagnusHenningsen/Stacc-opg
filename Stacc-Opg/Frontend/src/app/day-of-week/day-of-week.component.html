@@ -1,25 +1,45 @@
 <div class="container">
-  <canvas
-    baseChart width="450" height="450"
-    [type]="'line'"
-    [data]="lineChartData"
-    [options]="lineChartOptions"
-    [legend]="lineChartLegend"
-    (chartClick)="chartClicked($event)"
-  >
-  </canvas>
-
+  <li style="text-align: left; margin-left: 50px" *ngIf="clicked">
+    You consume the most on {{ highestConsumptions[0].day }}s.
+  </li>
+  <li style="text-align: left; margin-left: 50px" *ngIf="clicked">
+    You consume the least on {{ lowestConsumptions[0].day }}s.
+  </li>
+  
+  <div style="height:500">
+    <canvas
+      baseChart
+      width="450"
+      height="400"
+      [type]="'line'"
+      [data]="lineChartData"
+      [options]="lineChartOptions"
+      [legend]="lineChartLegend"
+      (chartClick)="chartClicked($event)"
+    >
+    </canvas>
+  </div>
   <div class="content-container">
     <div *ngIf="clicked" class="infoList">
       <ul>
-        <li style="text-align: center;">
+        <li style="text-align: center">
           <Strong>Highest consumption</Strong>
           <ul>
             <li *ngFor="let item of highestConsumptions">
               <ul class="statistics">
-                <li>Day: <span class="highest">{{item.day}}</span></li>
-                <li>Avg:    <span class="highest">{{item.consumption | number}} kwh</span> </li>
-                <li>Total: <span class="highest">{{item.total | number}} kwh </span></li>
+                <li>
+                  Day: <span class="highest">{{ item.day }}</span>
+                </li>
+                <li>
+                  Avg:
+                  <span class="highest"
+                    >{{ item.consumption | number }} kwh</span
+                  >
+                </li>
+                <li>
+                  Total:
+                  <span class="highest">{{ item.total | number }} kwh </span>
+                </li>
               </ul>
             </li>
           </ul>
@@ -28,14 +48,24 @@
     </div>
     <div *ngIf="clicked" class="infoList">
       <ul>
-        <li style="text-align: center;">
+        <li style="text-align: center">
           <Strong>Lowest consumption</Strong>
           <ul>
             <li *ngFor="let item of lowestConsumptions">
               <ul class="statistics">
-                <li>Day: <span class="lowest">{{item.day}}</span></li>
-                <li>Avg:    <span class="lowest">{{item.consumption | number}} kwh</span> </li>
-                <li>Total: <span class="lowest">{{item.total | number}} kwh </span></li>
+                <li>
+                  Day: <span class="lowest">{{ item.day }}</span>
+                </li>
+                <li>
+                  Avg:
+                  <span class="lowest"
+                    >{{ item.consumption | number }} kwh</span
+                  >
+                </li>
+                <li>
+                  Total:
+                  <span class="lowest">{{ item.total | number }} kwh </span>
+                </li>
               </ul>
             </li>
           </ul>

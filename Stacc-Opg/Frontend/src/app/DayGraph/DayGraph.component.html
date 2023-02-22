@@ -1,6 +1,25 @@
 <div class="container">
+  <li style="text-align: left; margin-left: 50px" *ngIf="clicked">
+    Your Average Consumption pr. day:
+    {{
+      totalConsumption.toLocaleString("en-GB", { maximumFractionDigits: 2 })
+    }}
+    kWh
+  </li>
+  <li style="text-align: left; margin-left: 50px" *ngIf="clicked">
+    Your Average Consumption pr. hour:
+    {{
+      (totalConsumption / 24).toLocaleString("en-GB", {
+        maximumFractionDigits: 2
+      })
+    }}
+    kWh
+  </li>
+
   <canvas
-    baseChart width="450" height="450"
+    baseChart
+    width="450"
+    height="450"
     [type]="'line'"
     [data]="lineChartData"
     [options]="lineChartOptions"
@@ -8,18 +27,32 @@
     (chartClick)="chartClicked($event)"
   >
   </canvas>
-
   <div class="content-container">
     <div *ngIf="clicked" class="infoList">
       <ul>
-        <li style="text-align: center;">
+        <li style="text-align: center">
           <Strong>Highest consumption</Strong>
           <ul>
             <li *ngFor="let item of highestConsumptions">
               <ul class="statistics">
-                <li>Date: <span style="color:red">{{ item.date | date : "EEE dd/MM/yyyy" }} </span></li>
-                <li>Avg: <span style="color:red">{{ item.consumption / 24 | number }} kwh </span></li>
-                <li>Total: <span style="color:red">{{ item.consumption  | number }} kwh </span></li>
+                <li>
+                  Date:
+                  <span style="color: red"
+                    >{{ item.date | date : "EEE dd/MM/yyyy" }}
+                  </span>
+                </li>
+                <li>
+                  Avg:
+                  <span style="color: red"
+                    >{{ item.consumption / 24 | number }} kwh
+                  </span>
+                </li>
+                <li>
+                  Total:
+                  <span style="color: red"
+                    >{{ item.consumption | number }} kwh
+                  </span>
+                </li>
               </ul>
             </li>
           </ul>
@@ -28,14 +61,29 @@
     </div>
     <div *ngIf="clicked" class="infoList">
       <ul>
-        <li style="text-align: center;">
+        <li style="text-align: center">
           <Strong>Lowest consumption</Strong>
           <ul>
             <li *ngFor="let item of lowestConsumptions">
-              <ul class="statistics" style="color:white">
-                <li>Date: <span style="color:green; text-align: right;">{{ item.date | date : "EEE dd/MM/yyyy" }} </span></li>
-                <li>Avg: <span style="color:green; text-align: right;">{{ item.consumption / 24| number }} kwh </span></li>
-                <li>Total: <span style="color:green; text-align: right;">{{ item.consumption  | number }} kwh </span></li>
+              <ul class="statistics" style="color: white">
+                <li>
+                  Date:
+                  <span style="color: green; text-align: right"
+                    >{{ item.date | date : "EEE dd/MM/yyyy" }}
+                  </span>
+                </li>
+                <li>
+                  Avg:
+                  <span style="color: green; text-align: right"
+                    >{{ item.consumption / 24 | number }} kwh
+                  </span>
+                </li>
+                <li>
+                  Total:
+                  <span style="color: green; text-align: right"
+                    >{{ item.consumption | number }} kwh
+                  </span>
+                </li>
               </ul>
             </li>
           </ul>

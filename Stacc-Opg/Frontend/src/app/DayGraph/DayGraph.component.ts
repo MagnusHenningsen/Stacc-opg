@@ -33,7 +33,7 @@ export class DayGraphComponent {
     maintainAspectRatio: true,
   };
   public lineChartLegend = true;
-
+  totalConsumption: number = 0;
   public consumptions: Consumption[] = [];
   line: any;
   lowestConsumptions: { date: Date; consumption: number; }[] = [];
@@ -95,7 +95,9 @@ export class DayGraphComponent {
   ConvertToDays() {
     let date: number | null = null;
     let day: Consumption[] = [];
+    this.totalConsumption = 0;
     this.consumptions.forEach((x) => {
+      this.totalConsumption += x.consumption;
       if (date == null) {
         date = x.from.getDate();
       }
@@ -107,6 +109,7 @@ export class DayGraphComponent {
       day.push(x);
     });
     this.toDays.push(day);
+    this.totalConsumption = this.totalConsumption / this.toDays.length;
   }
   clicked: boolean = false;
   chartClicked($event: { event?: import("chart.js").ChartEvent|undefined; active?: {}[]|undefined; }) {
