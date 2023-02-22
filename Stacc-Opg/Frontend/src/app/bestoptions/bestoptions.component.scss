@@ -33,7 +33,10 @@
         min-height: fit-content;
         width: 350px;
         margin-bottom: 20px;
-       
+        p {
+            margin-left: 20px;
+        }
+ 
     }
 
 }
@@ -51,7 +54,5 @@
     p {
         margin-left: 20px;
     }
-    h3 {
-        margin-left: 20px;
-    }
+
 }
