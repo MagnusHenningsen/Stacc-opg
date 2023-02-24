@@ -11,8 +11,8 @@ Here you can describe what tasks you decided to solve.
 > 4. run "npm install"
 > 5. run "nodemon start" or "node index.js" to start server
 > 6. open terminal in frontend folder
-> 7. "run npm install"
-> 8. "run ng serve -o" to host website
+> 7. run "npm install"
+> 8. run "ng serve -o" to host website
 > 9. if the website didn't open on it's own, open localhost:4200 in your browser
 
 ## Comments
